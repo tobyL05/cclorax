@@ -1,0 +1,5 @@
+{"type":"assistant","message":{"role":"assistant","content":"ok","usage":{"input_tokens":5,"output_tokens":3}}}
+{not valid json
+{"type":"assistant","message":{"role":"assistant"}}
+{"type":"user","message":{"role":"user","content":"no usage here"}}
+{"type":"assistant","message":{"role":"assistant","content":"done","usage":{"input_tokens":7,"output_tokens":2}}}
