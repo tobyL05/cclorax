@@ -2,6 +2,8 @@
 
 > monitor the environmental impact of your claude code sessions
 
+<img width="824" height="260" alt="image" src="https://github.com/user-attachments/assets/2185fb17-2201-42d4-8648-6f686c7f1a72" />
+
 ## How it works
 
 On every ccstatusline update, cclorax reads the conversation transcript, sums token usage across every turn, and converts that into a running Wh (watt-hour) estimate according to the following conversions.
