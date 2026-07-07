@@ -4,7 +4,7 @@
 
 ## How it works
 
-On every ccstatusline updated, cclorax reads the conversation transcript, sums token usage across every turn, and converts that into a running Wh (watt-hour) estimate according to the following conversions
+On every ccstatusline update, cclorax reads the conversation transcript, sums token usage across every turn, and converts that into a running Wh (watt-hour) estimate according to the following conversions
 
 | Token type  | Wh/MTok |
 | ----------- | ------- |
