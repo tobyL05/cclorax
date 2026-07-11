@@ -48,3 +48,4 @@ describe("formatImpact", () => {
     assert.ok(s.includes("Wh"), `got: ${s}`);
   });
 });
+

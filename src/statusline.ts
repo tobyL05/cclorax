@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { computeImpact, formatImpact } from "./impact-core.js";
+import { computeImpact, describeImpact, formatImpact } from "./impact-core.js";
 import { parseTranscriptUsage } from "./transcript.js";
 
 interface StatuslineInput {
@@ -24,7 +24,8 @@ async function main(): Promise<void> {
     ? parseTranscriptUsage(input.transcript_path)
     : { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheCreationTokens: 0 };
 
-  console.log(formatImpact(computeImpact(usage)));
+  const impact = computeImpact(usage);
+  console.log(`${formatImpact(impact)} (${describeImpact(impact)})`);
 }
 
 main().catch(() => {
