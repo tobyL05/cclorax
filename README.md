@@ -15,17 +15,25 @@
 2. Add a Custom Command widget
 3. Set the command to `npx -y cclorax@latest`
 
-
 ## How it works
 
-On every ccstatusline update, cclorax reads the conversation transcript, sums token usage across every turn, and converts that into a running Wh (watt-hour) estimate according to the following conversions.
-| Token type | Wh/MTok |
+On every ccstatusline update, cclorax reads the conversation transcript, sums token usage across every turn, and converts that into a running Wh (watt-hour) estimate according to the following conversions. Numbers may fluctuate due to background subagent/hooks/sessions still running.
+
+| Token type  | Wh/MTok |
 | ----------- | ------- |
-| Input | 390 |
-| Output | 1950 |
-| Cache read | 39 |
-| Cache write | 490 |
+| Input       | 390     |
+| Output      | 1950    |
+| Cache read  | 39      |
+| Cache write | 490     |
 
 [source](https://simonpcouch.com/blog/2026-01-20-cc-impact/)
 
-Numbers may fluctuate due to background subagent/hooks/sessions still running.
+## Motivation
+
+There's a lot of talk right now about "tokenmaxxing" and unlimited AI spend. Throwing more tokens at every problem because context is cheap, models are fast, and somehow a measure of employee performance. But tokens aren't free. Every one of them runs through a data center pulling real power and creating a carbon footprint. cclorax makes that metric visible to developers, so you can see how an individual coding session adds up.
+
+## Future Work
+
+- view/visualize consumption
+- change conversions based on selected model/effort
+- footprint API?
