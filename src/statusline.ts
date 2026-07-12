@@ -22,10 +22,15 @@ async function main(): Promise<void> {
   const input: StatuslineInput = JSON.parse(raw) as StatuslineInput;
   const usage = input.transcript_path
     ? parseTranscriptUsage(input.transcript_path)
-    : { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheCreationTokens: 0 };
+    : {
+        inputTokens: 0,
+        outputTokens: 0,
+        cacheReadTokens: 0,
+        cacheCreationTokens: 0,
+      };
 
   const impact = computeImpact(usage);
-  console.log(`${formatImpact(impact)} (${describeImpact(impact)})`);
+  console.log(formatImpact(impact) + " " + describeImpact(impact));
 }
 
 main().catch(() => {

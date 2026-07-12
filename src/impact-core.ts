@@ -55,6 +55,9 @@ export function computeImpact(usage: TokenUsage): Impact {
 const INTEGER_MULTIPLE_TOLERANCE = 0.05;
 
 export function describeImpact(impact: Impact): string {
+  if (impact.energyWh === 0) {
+    return "";
+  }
   for (const e of EQUIVALENTS) {
     const count = impact.energyWh / e.wh;
     const rounded = Math.round(count);
@@ -70,7 +73,7 @@ export function describeImpact(impact: Impact): string {
     EQUIVALENTS[EQUIVALENTS.length - 1]!;
   const count = impact.energyWh / match.wh;
   const formattedCount = count >= 10 ? count.toFixed(0) : count.toFixed(1);
-  return `≈ ${formattedCount}x ${match.label}`;
+  return `(≈ ${formattedCount}x ${match.label})`;
 }
 
 export function formatImpact(impact: Impact): string {
