@@ -21,25 +21,25 @@ export interface Impact {
 }
 
 const EQUIVALENTS: { label: string; wh: number }[] = [
-  { label: "full Tesla Model 3 battery charge", wh: 57500 },
-  { label: "Avg. North American household (per day)", wh: 26000 },
-  { label: "hour of central AC running", wh: 3000 },
-  { label: "load of laundry", wh: 2000 },
-  { label: "dishwasher cycle", wh: 1700 },
-  { label: "hour of space heater use", wh: 1500 },
-  { label: "instant pot / pressure cooker cycle", wh: 1000 },
-  { label: "hour of console gaming", wh: 800 },
-  { label: "hour of vacuuming", wh: 650 },
-  { label: "washing machine cycle (cold wash)", wh: 500 },
-  { label: "e-bike battery charge", wh: 400 },
-  { label: "mile of EV driving", wh: 280 },
-  { label: "cup of coffee brewed", wh: 130 },
-  { label: "hour of LED TV use", wh: 100 },
-  { label: "electric kettle boil", wh: 75 },
-  { label: "hour of ceiling fan use", wh: 60 },
-  { label: "full laptop charge", wh: 55 },
-  { label: "minute of hair dryer use", wh: 25 },
-  { label: "slice of toast (toaster cycle)", wh: 20 },
+  { label: "full Tesla Model 3 battery charge 🔋", wh: 57500 },
+  { label: "Avg. North American household (per day) 🏠", wh: 28000 },
+  { label: "hour of central AC running ❄️", wh: 3000 },
+  { label: "warn washing machine cycles 🧺", wh: 2000 },
+  { label: "dishwasher cycle 🍽️", wh: 1700 },
+  { label: "hour of space heater use 🔥", wh: 1500 },
+  { label: "hours of vacuuming 🧹", wh: 1200 },
+  { label: "pressure cooker cycles 🍲", wh: 300 },
+  { label: "hours of console gaming 🎮", wh: 200 },
+  { label: "cold washing machine cycles 🧺", wh: 150 },
+  { label: "e-bike battery charges 🏍️", wh: 400 },
+  { label: "miles of EV driving 🚗", wh: 280 },
+  { label: "cups of coffee brewed ☕️", wh: 130 },
+  { label: "hours of LED TV use 📺", wh: 60 },
+  { label: "electric kettle boils 🫖", wh: 100 },
+  { label: "hours of ceiling fan use 🌀", wh: 40 },
+  { label: "full laptop charge 💻", wh: 55 },
+  { label: "minutes of hair dryer use 💇", wh: 25 },
+  { label: "slices of toast 🍞", wh: 20 },
 ];
 
 export function computeImpact(usage: TokenUsage): Impact {
@@ -77,5 +77,5 @@ export function describeImpact(impact: Impact): string {
 }
 
 export function formatImpact(impact: Impact): string {
-  return `⚡ ${impact.energyWh.toFixed(2)}Wh`;
+  return `⚡ ≈ ${impact.energyWh.toFixed(2)}Wh`;
 }
